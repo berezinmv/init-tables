@@ -1,0 +1,9 @@
+{
+  "name": "init-tables",
+  "version": "1.0.0",
+  "author": "Maxim Berezin <berezin.mvdev@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
