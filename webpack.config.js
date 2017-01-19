@@ -8,8 +8,36 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.jsx?/, loader: "babel"
-			}
+				test: /\.jsx?/, 
+				loader: "babel-loader"
+			},
+			{
+          		test: /\.less$/,
+          		loader: 'style-loader!css-loader!less-loader'
+        	},
+        	{
+          		test: /\.css$/,
+          		loader: 'style-loader!css-loader'
+        	},
+        	{
+          		test: /\.jpg$/,
+          		loader: 'file-loader'
+        	},
+        	{
+          		test: /\.png$/,
+          		loader: 'url-loader?mimetype=image/png'
+        	},
+        	{
+          		test: /\.(eot|woff|woff2|ttf|svg)$/,
+          		loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+        	},
+        	{
+          		test: /\.(eot|woff|woff2|ttf|svg)$/,
+          		loader: 'file-loader'
+        	}
 		]
+	},
+	"resolve": {
+		"extensions": [".js", ".jsx", ""]
 	}
 }

@@ -3,22 +3,33 @@
   "version": "1.0.0",
   "author": "Maxim Berezin <berezin.mvdev@yahoo.com>",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "start": "http-server public",
+    "start": "node index.js",
     "build": "webpack",
     "build-prod": "webpack --config webpack.config.production.js"
   },
   "dependencies": {
-    "http-server": "^0.9.0"
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
-    "babel-plugin-syntax-flow": "^6.18.0",
-    "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-polyfill": "^6.20.0",
     "babel-preset-latest": "^6.16.0",
-    "flow-bin": "^0.38.0",
+    "babel-preset-react": "^6.16.0",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "jquery": "^3.1.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.14.0"
   }
 }

@@ -1,0 +1,15 @@
+@import (reference) "~bootstrap/less/bootstrap";
+
+:local .tabsheet {
+	.nav();
+	.nav-pills();
+
+	:global li {
+		cursor: pointer;
+
+		&.active a {
+			background: @brand-primary;
+			color: white;
+		}
+	}
+}
