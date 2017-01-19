@@ -41,7 +41,9 @@ export default class Application extends React.Component {
 	}
 
 	setActiveTabIndex(tabIndex) {
-		this.setState({activeTabIndex: tabIndex});
+		if (tabIndex < this.getTabs().length) {
+			this.setState({activeTabIndex: tabIndex});
+		}
 	}
 
 	getSearchString() {
@@ -65,10 +67,16 @@ export default class Application extends React.Component {
 			<div className={styles["application"]}>
 				<Panel>
 					<PanelHeading>
-						<Tabsheet tabs={this.getTabTitles()} activeTabIndex={this.getActiveTabIndex()}
-								  onTabClick={this.setActiveTabIndex}/>
-						<input className="search" onChange={(e) => this.setSearchString(e.target.value)} 
-							   value={this.getSearchString()} placeholder="Search"/>
+						<div className={styles["flex-row"]}>
+							<div className={styles["flex-item"]}>
+								<Tabsheet tabs={this.getTabTitles()} activeTabIndex={this.getActiveTabIndex()}
+									  onTabClick={this.setActiveTabIndex}/>
+							</div>
+							<div className={`${styles["flex-item"]} ${styles["align-right"]}`}>
+								<input className="search" onChange={(e) => this.setSearchString(e.target.value)} 
+								   value={this.getSearchString()} placeholder="Search"/>
+							</div>
+						</div>
 					</PanelHeading>
 					<PanelBody>
 						<Table datasource={this.getDatasource()} searchString={this.getSearchString()}/>

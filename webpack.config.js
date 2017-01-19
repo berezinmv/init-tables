@@ -1,3 +1,6 @@
+var CleanCss = require('less-plugin-clean-css');
+var Autoprefix = require('less-plugin-autoprefix');
+
 module.exports = {
 	devtool: "source-map",
 	entry: "./source/main.js",
@@ -39,5 +42,11 @@ module.exports = {
 	},
 	"resolve": {
 		"extensions": [".js", ".jsx", ""]
-	}
+	},
+  lessLoader: {
+      lessPlugins: [
+        new CleanCss({advanced: true}),
+        new Autoprefix(['last 3 versions'])
+      ]
+    }
 }
